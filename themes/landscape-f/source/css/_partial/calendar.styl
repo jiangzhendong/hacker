@@ -1,0 +1,73 @@
+.g-calendar
+  width 100%
+  border 1px solid color-calendar-border
+  overflow hidden
+  *zoom 1
+  position relative
+  border-radius 3px
+
+.g-calendar-hd,
+	.g-calendar-tit,
+	.g-calendar-on
+  background-color color-theme
+  color #fff
+
+.g-calendar-hd
+  text-align center
+  height 35px
+  line-height 35px
+  border-bottom 1px solid color-calendar-hd-border-bottom
+  letter-spacing 2px
+  a
+    color #ddffff !important
+
+.g-calendar-tit
+  overflow hidden
+  *zoom 1
+  border-top 1px solid color-calendar-tit-border-top
+
+.g-calendar-bd span,
+	.g-calendar-tit span
+  float left
+  display inline
+  width 14.2857143%
+  height 35px
+  line-height 35px
+  text-align center
+
+.g-calendar-grey
+  color #eee
+
+.g-calendar-prev,.g-calendar-next,.g-calendar-back,.g-calendar-now
+  position absolute
+  top 0
+  width 20px
+  text-align center
+  height 30px
+  line-height 30px
+  cursor pointer
+  font-weight bold
+  overflow hidden
+  font-family 'fontawesome'
+
+.g-calendar-prev:hover,.g-calendar-next:hover,.g-calendar-back:hover,.g-calendar-now:hover
+  color #fff
+
+.g-calendar-prev
+  left 9px
+  &:before
+    content '\f104'
+
+.g-calendar-next
+  right 9px
+  &:before
+    content '\f105'
+
+.g-calendar-back
+  left 0
+  &:before
+    content '\f100'
+.g-calendar-now
+  right 0
+  &:before
+    content '\f101'

@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>冰岛之都 | 图片</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link rel="icon" href="/images/ice.ico">
+<meta name="Author" content="Jiangzhendong">
+<meta http-equiv="imagetoolbar" content="no">
+<style type="text/css">
+	html {
+
+		overflow: hidden;
+
+	}
+
+	body {
+
+		position: absolute;
+
+		margin: 0px;
+
+		padding: 0px;
+
+		background: #eee;
+
+		width: 100%;
+
+		height: 100%;
+
+		color: #fff;
+
+		font-family: arial;
+
+		font-size: 0.8em;
+
+	}
+
+	#screen {
+
+		position: absolute;
+
+		width: 100%;
+
+		height: 100%;
+
+		background: #000;
+
+		overflow: hidden;
+
+	}
+
+	#screen img, canvas { 
+
+		position: absolute;
+
+		left: -9999px;
+
+		cursor: pointer;
+
+        image-rendering: optimizeSpeed;
+
+
+
+	}
+
+	#screen .href {
+
+		border: #FFF dotted 1px;
+
+	}
+
+	#screen .fog { 
+
+		position: absolute;
+
+		background: #fff;
+
+		opacity: 0.1;
+
+		filter: alpha(opacity=10);
+
+	}
+
+	#command {
+
+		position:absolute;
+
+		left: 1em;
+
+		top: 1em;
+
+		width: 130px;
+
+		z-index: 30000;
+
+		background:#000;
+
+		border: #000 solid 1em;
+
+	}
+
+	#bar {
+
+		position:relative;
+
+		left: 1em;
+
+		top: 1em;
+
+		height: 160px;
+
+	}
+
+	#bar .button { 
+
+		position: absolute;
+
+		background: #222;
+
+		width: 20px;
+
+		height: 20px;
+
+		cursor: pointer;
+
+	}
+
+	#bar .loaded { 
+
+		background: #666;
+
+	}
+
+	#bar .viewed { 
+
+		background: #fff;
+
+	}
+
+	#bar .selected { 
+
+		background: #f00;
+
+	}
+
+	#urlInfo {
+
+		position: absolute;
+
+		background: url(images/r.gif) no-repeat 0 4px;
+
+		visibility: hidden;
+
+		z-index: 30000;
+
+		padding-left: 12px;
+
+		cursor: pointer;
+
+	}
+
+</style>
+<script type="text/javascript" src="/js/3d_images.js"></script>
+</head>
+
+<body>
+<div id="screen">
+	<div id="command">
+
+		<h1>图片列表</h1>
+		 我喜欢这样的图片感觉，给人一种欢快的感觉。
+		<div id="bar"></div>
+	</div>
+	<div id="urlInfo"></div>
+</div>
+
+<script type="text/javascript">
+/* ==== start script ==== */
+setTimeout(function() {
+	m3D.init(
+		[ 
+			{ src: '46eae50db6.jpg', url: '#', title: 'It', color: '#fff' },
+			{ src: '661a66329a.jpg' },
+			{ src: 'a8008ae7f7.jpg' },
+			{ src: '69833ed09a.jpg' },
+			{ src: 'fe00425d0a.jpg' },
+			{ src: 'b05b0c6962.jpg' },
+			{ src: '6a884d6ef2.jpg' },
+			{ src: 'ed57bce8c4.jpg' },
+			{ src: '94da4fb185.jpg' },
+			{ src: 'd04505fe96.jpg' },
+			{ src: '774573728f.jpg' },
+			{ src: 'b05c9edc7f.jpg' },
+			{ src: '8fe86226ff.jpg' },
+			{ src: '7b4cc906b3.jpg' },
+			{ src: 'f22e53da3a.jpg' },
+			{ src: 'c136720da3.jpg' },
+			{ src: 'd57dc05c81.jpg' },
+			{ src: '65f8787807.jpg' },
+			{ src: '200ff06c0e.jpg' },
+			{ src: '5b0b0c8119.jpg' },
+			{ src: '0e85d4fe6d.jpg' },
+			{ src: '1ef7ea6559.jpg' },
+			{ src: 'ed37a0925e.jpg' },
+			{ src: '73d310387e.jpg', url: '#', color: '#fff' }
+		]
+	);
+}, 500);
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+# Header
+menu:
+  主页: /
+  档案: /archives
+  图片: /images/js/index.html
+  关于: /about
+rss: /atom.xml
+github: https://github.com/jiangzhendong
+
+# Content
+excerpt_link: Read More
+fancybox: true
+
+# Sidebar
+sidebar: right
+widgets:
+- about_me
+- category
+- tagcloud
+- calendar
+- recent_posts
+- duoshuo_recent_comments
+- links
+
+# Miscellaneous
+google_analytics:
+favicon: /images/ice.ico
+twitter:
+google_plus:
+fb_admins:
+fb_app_id:
+
+# Toc
+toc:
+  article: true   ## show contents in article.
+  aside: true     ## show contents in aside.
+# Scroll to top
+go_top: true
+
+# duoshuo
+duoshuo_shortname: jwind
+
+# baidu share
+baidushare: true
+
+# blogroll
+links:
+- name: 公益页面
+  link: http://www.qq.com/404/
+
+# about me
+about_me:
+  title: ABOUT ME
+  gravatar: 
+  avatar: http://himg.bdimg.com/sys/portrait/item/fb00e58aa8e6bcabe59c9fe58caa3731346622.jpg
+  texts:
+  - Hi,I'm J.Wind
+
+# display updated
+display_updated: true

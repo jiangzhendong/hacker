@@ -1,0 +1,49 @@
+# Header
+menu:
+  主页: /
+  档案: /archives
+  关于: /about
+rss: /atom.xml
+
+# Content
+excerpt_link: Read More
+fancybox: true
+
+# Sidebar
+sidebar: right
+widgets:
+- category
+- tag
+- tagcloud
+- archive
+- calendar
+- links
+
+# Miscellaneous
+google_analytics: 
+  enable: true
+  id: UA-57948559-1  ## e.g. UA-1766729-8 your google analytics ID.
+  site: auto ## e.g. yangjian.me your google analytics site or set the value as auto.
+favicon: /favicon.png
+twitter:
+google_plus:
+fb_admins:
+fb_app_id:
+
+
+# Toc
+toc:
+  article: true   ## show contents in article.
+  aside: true     ## show contents in aside.
+# Scroll to top
+go_top: true
+# duoshuo
+duoshuo_shortname: 
+# baidu share
+baidushare: true
+# blogroll
+links:
+- name: 404 page
+  link: http://yibo.iyiyun.com/js/yibo404/key/1
+# display updated
+display_updated: true

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>perl语言入门学习笔记 | 冰岛之都</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="perl内部并不存在整数，在perl内部总是按照双精度浮点数的要求来保存数字并进行运算的。如果要使perl支持unicode字符，需要添加 use utf8;\l 将下一个字母转换为小写\L 将它后面的所有字母都换为小写，直到\E为止\u 将下一个字母转换为大写">
+<meta property="og:type" content="article">
+<meta property="og:title" content="perl语言入门学习笔记">
+<meta property="og:url" content="http://jiangzhendong.github.io/2014/12/25/perl-lan/">
+<meta property="og:site_name" content="冰岛之都">
+<meta property="og:description" content="perl内部并不存在整数，在perl内部总是按照双精度浮点数的要求来保存数字并进行运算的。如果要使perl支持unicode字符，需要添加 use utf8;\l 将下一个字母转换为小写\L 将它后面的所有字母都换为小写，直到\E为止\u 将下一个字母转换为大写">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="perl语言入门学习笔记">
+<meta name="twitter:description" content="perl内部并不存在整数，在perl内部总是按照双精度浮点数的要求来保存数字并进行运算的。如果要使perl支持unicode字符，需要添加 use utf8;\l 将下一个字母转换为小写\L 将它后面的所有字母都换为小写，直到\E为止\u 将下一个字母转换为大写">
+
+  
+    <link rel="alternative" href="/atom.xml" title="冰岛之都" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/ice.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-57948559-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+  <script src="/js/jq.snow.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="http://himg.bdimg.com/sys/portrait/item/fb00e58aa8e6bcabe59c9fe58caa3731346622.jpg">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">J.Wind</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/categories/随感">随感</a></li>
+				        
+							<li><a href="/picture/index.html">图片</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/jiangzhendong" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						<a href="/tags/Hexo/" style="font-size: 10.00px;">Hexo</a><a href="/tags/days/" style="font-size: 10.00px;">days</a><a href="/tags/hexo/" style="font-size: 10.00px;">hexo</a><a href="/tags/markdown/" style="font-size: 10.00px;">markdown</a><a href="/tags/nodejs/" style="font-size: 10.00px;">nodejs</a><a href="/tags/perl/" style="font-size: 10.00px;">perl</a><a href="/tags/ssh/" style="font-size: 20.00px;">ssh</a><a href="/tags/windown10/" style="font-size: 10.00px;">windown10</a><a href="/tags/随感/" style="font-size: 10.00px;">随感</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					本人毕业与2014年，这是一个历史性的年代，标志笔者开始步入这个程序世界的开始年代。
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="http://himg.bdimg.com/sys/portrait/item/fb00e58aa8e6bcabe59c9fe58caa3731346622.jpg">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">J.Wind</a></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/categories/随感">随感</a></li>
+		        
+					<li><a href="/picture/index.html">图片</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/jiangzhendong" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-perl-lan" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/12/25/perl-lan/" class="article-date">
+  	<time datetime="2014-12-25T09:53:29.000Z" itemprop="datePublished">12月 25 2014</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/perl/">perl</a></li></ul>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      perl语言入门学习笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>perl内部并不存在整数，在perl内部总是按照双精度浮点数的要求来保存数字并进行运算的。<br>如果要使perl支持unicode字符，需要添加 use utf8;<br>\l 将下一个字母转换为小写<br>\L 将它后面的所有字母都换为小写，直到\E为止<br>\u 将下一个字母转换为大写<a id="more"></a><br>\U 将它后面的所有字母都换为大写，直到\E为止<br>\Q 相当于把它到\E之间的非单词字符加上反斜杠<br>\E 结束\L、\U、\Q开始的作用范围<br>per的告警信息：<br>use warnings;<br>或者使用 perl -w运行脚本<br>或者加上 #!/usr/bin/perl -w<br>如果看不懂告警，就是用<br>use diagnostics;</p>
+<p>打印更详细的信息<br>$#aaa表示aaa数组的最后一个元素的索引值<br>关于perl中布尔值的判断<br>1、如果是数字，0为假；所有其他的为真<br>2、如果是字符串，空字符串为假，所有其他的字符串为真<br>3、如果既不是数字也不是字符串，那就先换成数字或者字符串再进行判断。<br>使用defined函数来判断变量是否定义<br>数组定义：<br>my @p1=(‘aaa’,’bbb’,’ccc’);<br>my @p2=(1..100);<br>my @p3=qw(aaa bbb ccc);<br>my @p4=qw! aaa bbb ccc !;<br>$end=$#p1;<br>$number=$#p1+1;<br>$last=$p1[$#p1];<br>$last=$p1[-1];<br>pop取出数组中的最后的一个元素并将其作为返回值返回。<br>$last=pop(@p1);<br>push添加元素到数组的最后<br>push(@p1,’jaj’);<br>push @p1,’aaaa’;<br>push @p1,@p2;<br>shift取出数字第一个元素并将其作为返回值返回<br>$first=shift(@p1);<br>unshift添加元素到数组的最左边<br>unshift(@p1,’jaj’);<br>unshift @p1,@p2;<br>splice可以实现从中间操作数组；<br>foreach 来循环遍历数组中的值<br>reverse反转数组<br>sort 对数组进行排序<br>sort(@p1) 正向排序<br>reverse sort(@p1) 逆向排序<br>chomp(@p1);<br>chomp(@line =);<br>可以使用state操作符来声明持久性私有变量<br>state $sum=0;<br>state @numbers;<br>打印数组：<br>print @array<br>print “@array”<br>@ARGV是存放所有参数的数组<br>&lt;&gt;砖石操作符，把输入参数当作文件处理<br>文件操作符（文件句柄）<br>open CONFIG, ‘test’;<br>open CONFIG, ‘<test’; open config,="" ‘="">test’;<br>open CONFIG, ‘&gt;&gt;test’;<br>关闭文件句柄：<br>close CONFIG;<br>读取或者写入的时候指定文件的字符编码<br>open CONFIG, ‘&lt;:encoding(UTF-8)’, ‘test’;<br>open CONFIG, ‘&gt;&gt;:encoding(UTF-8)’, ‘test’;<br>打印perl能处理的字符编码清单<br>perl -MEncode -le “print for Encode-&gt;encodings(‘:all’)”<br>判断文件句柄是否成功的代码：<br>my $success=open CONFIG, ‘&gt;&gt;’, test’;<br>if( !$success ){ print “create file faild”;<br>}<br>if( ! open CONFIG, ‘&gt;&gt;’, ‘test’ ){<br>die “Can’t create config file: $!”;<br>}<br>if( @ARGV<2 ){="" die="" “not="" enough="" arguments\n”;="" }="" 自动检查致命错误="" use="" autodie;="" 可以将文件句柄设置成变量，这样文件句柄可以作为子程序的参数传递，或者放在数组和hash中排序，或者严格控制其作用域。="" 打印往文件句柄中写入数据的时候不需要加入逗号！="" hash="" 申明hash="" my="" %test="(‘foo’=">35,’bar’=&gt;39,’carl’=&gt;34,’zhang’=&gt;89);<br>my %test=(‘foo’,35,’bar’,39,’carl’,34,’zhang’,89);<br>访问哈希元素<br>$hash{$key};<br>哈希元素赋值<br>$hash{‘test’}=’carlzhang’;<br>访问整个hash<br>my @any_array=%array;<br>print “@any_array\n”;<br>hash转换<br>my %test_hash=reverse %hash;<br>hash函数<br>keys函数能返回hash的所有键列表<br>values函数能返回hash所有的值列表<br>my %test=(‘foo’=&gt;35,’bar’=&gt;39,’carl’=&gt;34,’zhang’=&gt;89);<br>my @test_key=keys%test;<br>my @test_value=values%test;<br>print “test_key is: @test_key\n”;<br>print “test_value is: @test_value\n”;<br>使用each函数遍历hash<br>my %test=(‘foo’=&gt;35,’bar’=&gt;39,’carl’=&gt;34,’zhang’=&gt;89);<br>while( my($test_key,$test_value)=each %test){<br>print “$test_key=&gt;$test_value\n”;<br>}<br>my %test=(‘foo’=&gt;35,’bar’=&gt;39,’carl’=&gt;34,’zhang’=&gt;89);<br>foreach my $test_key (sort keys %test){<br>my $test_value=$test{$test_key};<br>print “$test_key=&gt;$test_value\n”;<br>}<br>判断键值是否存在：<br>if ( exists $test{‘foo’}){<br>print “key fool is in test hash\n”;<br>}<br>删除hash中的某个元素<br>delete $test{‘foo’};<br>%ENV环境变量<br>my @test=%ENV;<br>foreach $test_key (keys %ENV){<br>print “$test_key=&gt;$ENV{$test_key}\n”;<br>}<br>模式匹配：<br>m/string/;<br>m%string%;<br>/string/;<br>使用/i忽略带小写<br>/string/i<br>用/s匹配任意字符<br>/test.aaa/s 会匹配test和aaa之间的所有内容，包括换行符<br>用/x加入空白符，有了/x，perl会忽略空格和正则表达式中的perl风格的注释。<br>\A表示字符串开头<br>\z表示要匹配的字符串绝对末尾<br>\b匹配单词边界<br>\B不匹配单词边界<br>捕获<br>使用?:来指定不捕获小括号内的东东<br>使用?来命名捕获的内容，使用$+{LABEL}来提取捕获的内容<br>贪婪匹配 ? +? {1,}? {4,20}? ??<br>$^I 读取文件后对文件进行备份<br>perl模块<br>perldoc CGI 查看模块的用法<br>cpan -a 列出安装的模块<br>模块的安装：<br>perl Makefile.PL<br>make<br>make install<br>可以在perl Makefile.PL后面通过INSTALL_BASE指定安装的路径<br>File::Basename和File::Spec的使用<br>use File::Basename;<br>use File::Spec;<br>my $name=”/usr/local/bin/perl”;<br>my $filename=basename $name;<br>my $dirname=dirname $name;<br>my $new_name=File::Spec-&gt;catfile($dirname,$filename);<br>print “filename is $filename\n”;<br>print “dirname is $dirname\n”;<br>print “newname is $new_name\n”;<br>文件操作<br>文件测试操作符<br>-r 文件或者目录对当前用户或组来说是可读的<br>-w 文件或者目录对当前用户或组来说是可写的<br>-x 文件或者目录对当前用户或组来说是可执行的<br>-o 文件或目录由当前用户拥有<br>-R 文件或者目录对实际的用户或者组是可读的<br>-W 文件或者目录对实际的用户或者组是可写的<br>-X 文件或者目录对实际的用户或者组是可执行的<br>-O 文件或者目录由实际的用户拥有<br>-e 文件或者目录是存在的<br>-z 文件存在且没有内容（对目录来说永远为假）<br>-s 文件或者目录存在而且有内容（返回值是以字节为单位的文件大小）<br>-f 是普通文件<br>-d 是目录<br>-l 是符号链接<br>-S 是socket类型的文件<br>-p 是命名管道，也就是先入先出(fifo)队列<br>-b 是块设备文件（比如某个可挂载的磁盘）<br>-c 是字符设备文件（比如某个I/O设备）<br>-u 文件或者目录设置了setuid位<br>-g 文件或者目录设置了setgid位<br>-k 文件或者目录设置了sticky位<br>-t 文件句柄是TTY设备<br>-T 看起来像文本文件<br>-B 看起来像二进制文件<br>-M 最后一次被修改后至今的天数<br>-A 最后一次被访问后至今的天数<br>-C 最后一次文件节点编号(inode)被变更后至今的天数<br>测试统一文件的多项属性<br>if (-r $file and -w $file){<br>…..<br>}<br>可以改写成如下语句，以提高性能<br>if (-r $file and -w ){<br>…..<br>} 符号表示虚拟文件句柄，它会告诉perl用上次查询过的文件来做当前测试。<br>stat和lstat函数<br>stat函数返回一个有13个元素组成的列表。<br>dev 0 文件所在的设备编号<br>ino 1 文件的inode标号<br>mode 2 文件模式（权限、类型）<br>nlink 3 文件或者目录的连接数<br>uid 4 文件的用户ID<br>gid 5 文件的组ID<br>rdev 6 设备识别码（只用于特殊文件）<br>size 7 文件总的自己数<br>atime 8 文件最后访问时间<br>mtime 9 文件最后更改时间<br>ctime 10 inode更改的时间<br>blksize 11 文件系统I/O首选块的大小<br>blocks 12 实际分配的文件块数<br>localtime函数<br>($sec,$min,$hour,$mday,$mon,$year_off,$wday,$yday,$isdat) = localtime;<br>$sec 秒，0 ~ 59<br>$min 分，0 ~ 59<br>$hour 时，0 ~ 23<br>$mday 月份中的日期， 1 ~ 2 8、2 9、3 0或3 1<br>$mon 年份中的月份， 0 ~ 11（这里请特别要小心）<br>$year_off 1900年以来的年份。将1900加上这个数字，得出正确的4位数年份<br>$wday 星期几，0 ~ 6<br>$yday 一年中的第几天，0 ~ 364或365<br>$isdst 如果夏令时有效，则为真<br>perl目录操作<br>chdir改变工作目录<br>chdir ‘/etc’ or die “can’t chdir to /etc: $!\n”;<br>在程序内部使用通配符匹配文件<br>my @files=glob ‘. ‘; #匹配多个模式需要用空格隔开，也可以采用my @files=&lt;<em>&gt;;的方式<br>print “@files\n”;<br>opendir 打开目录<br>readdir 读取目录下的文件名<br>closedir 关闭打卡的目录句柄<br>测试代码：<br>use File::Spec::Functions;<br>my $dir=’/etc’;<br>opendir DIR,$dir or die “can’t open /etc directory: $!\n”;<br>foreach my $file (readdir DIR){<br>if ($file=~/^./){<br>next;<br>}<br>$file=catfile($dir,$file);<br>print “we found $file in /etc directory\n”;<br>}<br>closedir DIR;<br>unlink删除文件，返回成功删除文件的数目，unlink不能用来删除目录<br>rename重命名文件<br>测试代码：<br>for my $file (glob ‘</em>.old’){<br>my $new_file=$file;<br>$new_file=~s/old/new/;<br>if (-z $new_file){<br>print “$new_file is exists ,please check it out\n”;<br>}else{<br>rename $file,$new_file or warn “rename $file faild,please check it out\n”;<br>print “rename $file success ,don’t worry\n”;<br>}<br>}<br>创建和删除目录<br>mkdir 创建目录<br>my $dir=’aaa’;<br>my $permissions=”0755”;<br>mkdir ‘aaa’,oct($permissions) or die “can’t create directory aaa: $!\n”;<br>rmdir删除目录，每次只能删除一个目录，而且删除时目录必须为空，不然会导致失败!<br>chmod修改文件或者目录权限<br>chmod 0755,’test’;<br>chown修改文件或者目录的属主或者属组,返回受影响的文件数量<br>测试代码:<br>my $user=52;<br>my $group=52;<br>chown $user,$group,’bbb’;<br>defined(my $user1=getpwnam ‘puppet’) or die “bad user: $!\n”;<br>defined(my $group1=getpwnam ‘puppet’) or die ‘bad group: $!\n’;<br>chown $user1,$group1,’bbb.new’;<br>utime修改文件的时间戳(最近的更改和访问时间)<br>测试代码：<br>my $now=time;<br>my $ago=$now-246060;<br>utime $now,$ago,’bbb’;<br>字符串和排序<br>用index查找子字符串<br>my $string=’hah aaa bbbcc aa ddd’;<br>my $part=index($string,’aa’);<br>print “$part\n”;</2></test’;></p>
+<p>排序<br>按照数字排序&lt;=&gt;;<br>按照字符排序cmp;<br>my @some_numbers=qw{1 10 23 100 34 45};<br>my @some_chars=qw{aa cc bb dd dc bc};<br>sub by_number{<br>$a&lt;=&gt;$b;<br>}<br>sub by_char{<br>$a cmp $b;<br>}<br>my @test=sort by_number @some_numbers;<br>my @test2=sort by_char @some_chars;<br>print “@test\n”;<br>print “@test2\n”;<br>sub sort_test{<br>substr($test1{$a},2,6) &lt;=&gt; substr($test1{$b},2,6)<br>or substr($test1{$a},0,1) cmp substr($test1{$b},0,1)<br>}<br>执行外部命令<br>IPC::System::Simple<br>system systemx<br>capture capturex<br>错误扑捉：<br>eval<br>my $aaa1=$ARGV[0];<br>my $aaa2=$ARGV[1];<br>my $test=eval{$aaa1/$aaa2} || ‘aaa’;<br>print “I couldn’t divide by \$aaa2: $@” if $@;<br>print “$test”;<br>有4中类型的错误eval捕捉不到：<br>1、代码语法错误<br>2、perl解析器本省的崩溃错误<br>3、告警类错误<br>4、每次调用exit的时候</p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/12/26/hexo-note/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          学习如何实现hexo博客文档
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/12/22/hexo-guide/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hexo Guide</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="perl-lan" data-title="perl语言入门学习笔记" data-url="http://jiangzhendong.github.io/2014/12/25/perl-lan/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 J.Wind <a href="/picture/welove/index.html">特殊入口</a>
+    	</div>
+      	<div class="footer-right">
+
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+  <script src="/js/main.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>
