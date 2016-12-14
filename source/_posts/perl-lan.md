@@ -3,29 +3,35 @@ date: 2014-12-25 09:53:29
 categories: 技术
 tags: perl
 ---
-perl内部并不存在整数，在perl内部总是按照双精度浮点数的要求来保存数字并进行运算的。
-如果要使perl支持unicode字符，需要添加 use utf8;
+ perl内部并不存在整数，在perl内部总是按照双精度浮点数的要求来保存数字并进行运算的。
+### 如果要使perl支持unicode字符，需要添加 use utf8;
 \l 将下一个字母转换为小写
 \L 将它后面的所有字母都换为小写，直到\E为止
 \u 将下一个字母转换为大写<!-- more -->
 \U 将它后面的所有字母都换为大写，直到\E为止
 \Q 相当于把它到\E之间的非单词字符加上反斜杠
 \E 结束\L、\U、\Q开始的作用范围
-per的告警信息：
-use warnings;
+### per的告警信息：
+```js
+	use warnings;
+```
 或者使用 perl -w运行脚本
-或者加上 #!/usr/bin/perl -w
+或者加上 `#!/usr/bin/perl -w`
 如果看不懂告警，就是用
+```js
 use diagnostics;
-
-打印更详细的信息
+```
+### 打印更详细的信息
+```js
 $#aaa表示aaa数组的最后一个元素的索引值
+```
 关于perl中布尔值的判断
-1、如果是数字，0为假；所有其他的为真
-2、如果是字符串，空字符串为假，所有其他的字符串为真
-3、如果既不是数字也不是字符串，那就先换成数字或者字符串再进行判断。
-使用defined函数来判断变量是否定义
-数组定义：
+* 1、如果是数字，0为假；所有其他的为真
+* 2、如果是字符串，空字符串为假，所有其他的字符串为真
+* 3、如果既不是数字也不是字符串，那就先换成数字或者字符串再进行判断。
+### 使用defined函数来判断变量是否定义
+#### 数组定义：
+```js
 my @p1=(‘aaa’,’bbb’,’ccc’);
 my @p2=(1..100);
 my @p3=qw(aaa bbb ccc);
@@ -34,17 +40,26 @@ $end=$#p1;
 $number=$#p1+1;
 $last=$p1[$#p1];
 $last=$p1[-1];
+```
 pop取出数组中的最后的一个元素并将其作为返回值返回。
+```js
 $last=pop(@p1);
+```
 push添加元素到数组的最后
+```js
 push(@p1,’jaj’);
 push @p1,’aaaa’;
 push @p1,@p2;
+```
 shift取出数字第一个元素并将其作为返回值返回
+```js
 $first=shift(@p1);
+```
 unshift添加元素到数组的最左边
+```js
 unshift(@p1,’jaj’);
 unshift @p1,@p2;
+```
 splice可以实现从中间操作数组；
 foreach 来循环遍历数组中的值
 reverse反转数组
@@ -62,18 +77,23 @@ print “@array”
 @ARGV是存放所有参数的数组
 <>砖石操作符，把输入参数当作文件处理
 文件操作符（文件句柄）
+```js
 open CONFIG, ‘test’;
 open CONFIG, ‘<test’;
 open CONFIG, ‘>test’;
 open CONFIG, ‘>>test’;
+```
 关闭文件句柄：
 close CONFIG;
 读取或者写入的时候指定文件的字符编码
 open CONFIG, ‘<:encoding(UTF-8)’, ‘test’;
 open CONFIG, ‘>>:encoding(UTF-8)’, ‘test’;
 打印perl能处理的字符编码清单
+```js
 perl -MEncode -le “print for Encode->encodings(‘:all’)”
+```
 判断文件句柄是否成功的代码：
+```js
 my $success=open CONFIG, ‘>>’, test’;
 if( !$success ){ print “create file faild”;
 }
@@ -83,10 +103,12 @@ die “Can’t create config file: $!”;
 if( @ARGV<2 ){
 die “Not enough arguments\n”;
 }
+```
 自动检查致命错误
 use autodie;
 可以将文件句柄设置成变量，这样文件句柄可以作为子程序的参数传递，或者放在数组和hash中排序，或者严格控制其作用域。
 打印往文件句柄中写入数据的时候不需要加入逗号！
+```js
 hash
 申明hash
 my %test=(‘foo’=>35,’bar’=>39,’carl’=>34,’zhang’=>89);
@@ -129,6 +151,7 @@ my @test=%ENV;
 foreach $test_key (keys %ENV){
 print “$test_key=>$ENV{$test_key}\n”;
 }
+```
 模式匹配：
 m/string/;
 m%string%;
@@ -154,8 +177,9 @@ cpan -a 列出安装的模块
 perl Makefile.PL
 make
 make install
-可以在perl Makefile.PL后面通过INSTALL_BASE指定安装的路径
+可以在perl Makefile.PL后面通过`INSTALL_BASE`指定安装的路径
 File::Basename和File::Spec的使用
+```js
 use File::Basename;
 use File::Spec;
 my $name=”/usr/local/bin/perl”;
@@ -165,8 +189,10 @@ my $new_name=File::Spec->catfile($dirname,$filename);
 print “filename is $filename\n”;
 print “dirname is $dirname\n”;
 print “newname is $new_name\n”;
+```
 文件操作
 文件测试操作符
+```js
 -r 文件或者目录对当前用户或组来说是可读的
 -w 文件或者目录对当前用户或组来说是可写的
 -x 文件或者目录对当前用户或组来说是可执行的
@@ -194,14 +220,21 @@ print “newname is $new_name\n”;
 -M 最后一次被修改后至今的天数
 -A 最后一次被访问后至今的天数
 -C 最后一次文件节点编号(inode)被变更后至今的天数
+```
 测试统一文件的多项属性
+```js
 if (-r $file and -w $file){
 …..
 }
+```
 可以改写成如下语句，以提高性能
+```js
 if (-r $file and -w ){
 …..
-} 符号表示虚拟文件句柄，它会告诉perl用上次查询过的文件来做当前测试。
+}
+```
+符号表示虚拟文件句柄，它会告诉perl用上次查询过的文件来做当前测试。
+```js
 stat和lstat函数
 stat函数返回一个有13个元素组成的列表。
 dev 0 文件所在的设备编号
@@ -231,7 +264,9 @@ $isdst 如果夏令时有效，则为真
 perl目录操作
 chdir改变工作目录
 chdir ‘/etc’ or die “can’t chdir to /etc: $!\n”;
+```
 在程序内部使用通配符匹配文件
+```js
 my @files=glob ‘. ‘; #匹配多个模式需要用空格隔开，也可以采用my @files=<*>;的方式
 print “@files\n”;
 opendir 打开目录
@@ -262,7 +297,9 @@ rename $file,$new_file or warn “rename $file faild,please check it out\n”;
 print “rename $file success ,don’t worry\n”;
 }
 }
+```
 创建和删除目录
+```js
 mkdir 创建目录
 my $dir=’aaa’;
 my $permissions=”0755”;
@@ -288,10 +325,11 @@ utime $now,$ago,’bbb’;
 my $string='hah aaa bbbcc aa ddd';
 my $part=index($string,'aa');
 print "$part\n";
-
+```
 排序
 按照数字排序<=>;
 按照字符排序cmp;
+```js
 my @some_numbers=qw{1 10 23 100 34 45};
 my @some_chars=qw{aa cc bb dd dc bc};
 sub by_number{
@@ -308,19 +346,22 @@ sub sort_test{
 substr($test1{$a},2,6) <=> substr($test1{$b},2,6)
 or substr($test1{$a},0,1) cmp substr($test1{$b},0,1)
 }
+```
 执行外部命令
 IPC::System::Simple
 system systemx
 capture capturex
 错误扑捉：
+```js
 eval
 my $aaa1=$ARGV[0];
 my $aaa2=$ARGV[1];
 my $test=eval{$aaa1/$aaa2} || ‘aaa’;
 print “I couldn’t divide by \$aaa2: $@” if $@;
 print “$test”;
+```
 有4中类型的错误eval捕捉不到：
-1、代码语法错误
-2、perl解析器本省的崩溃错误
-3、告警类错误
-4、每次调用exit的时候
+* 1、代码语法错误
+* 2、perl解析器本省的崩溃错误
+* 3、告警类错误
+* 4、每次调用exit的时候

@@ -7,12 +7,12 @@ menu:
 # SubNav
 subnav:
   github: "https://github.com/jiangzhendong"
-  weibo: "#"
-  rss: "#"
-  #facebook: "#"
-  # google: "#"
-  # twitter: "#"
-  # linkedin: "#"
+  weibo: "http://weibo.com/u/2810839183"
+  #rss: "#"
+  #facebook: ""
+  #google: ""
+  twitter: "https://twitter.com/JiangWind"
+  #linkedin: "https://www.linkedin.com/in/j-wind-70684b134"
 
 rss: /atom.xml
 
