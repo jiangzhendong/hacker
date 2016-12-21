@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>linux 从百度网盘下载文件的方法 | 冰岛之都</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="方法1.wgetwget是在Linux下开发的开放源代码的软件，作者是Hrvoje Niksic，后来被移植到包括Windows在内的各个平台上。它有以下功能和特点：
+
+（1）支持断点下传功能；这一点，也是网络蚂蚁和FlashGet当年最大的卖点，现在，Wget也可以使用此功能，那些网络不是太好的用户可以放心了；
+（2）同时支持FTP和HTTP下载方式；尽管现在大部分软件可以使用HTTP方式下载，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux 从百度网盘下载文件的方法">
+<meta property="og:url" content="http://jiangzhendong.github.io/2016/08/14/linux-baidu-pan/index.html">
+<meta property="og:site_name" content="冰岛之都">
+<meta property="og:description" content="方法1.wgetwget是在Linux下开发的开放源代码的软件，作者是Hrvoje Niksic，后来被移植到包括Windows在内的各个平台上。它有以下功能和特点：
+
+（1）支持断点下传功能；这一点，也是网络蚂蚁和FlashGet当年最大的卖点，现在，Wget也可以使用此功能，那些网络不是太好的用户可以放心了；
+（2）同时支持FTP和HTTP下载方式；尽管现在大部分软件可以使用HTTP方式下载，">
+<meta property="og:updated_time" content="2016-12-13T05:27:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux 从百度网盘下载文件的方法">
+<meta name="twitter:description" content="方法1.wgetwget是在Linux下开发的开放源代码的软件，作者是Hrvoje Niksic，后来被移植到包括Windows在内的各个平台上。它有以下功能和特点：
+
+（1）支持断点下传功能；这一点，也是网络蚂蚁和FlashGet当年最大的卖点，现在，Wget也可以使用此功能，那些网络不是太好的用户可以放心了；
+（2）同时支持FTP和HTTP下载方式；尽管现在大部分软件可以使用HTTP方式下载，">
+  
+    <link rel="alternative" href="/atom.xml" title="冰岛之都" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/ice.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-57948559-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+  <script src="/js/jq.snow.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="http://himg.bdimg.com/sys/portrait/item/fb00e58aa8e6bcabe59c9fe58caa3731346622.jpg">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">J.Wind</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/categories/随感">随感</a></li>
+				        
+							<li><a href="/picture/index.html">图片</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/jiangzhendong" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/u/2810839183" title="weibo">weibo</a>
+					        
+								<a class="twitter" target="_blank" href="https://twitter.com/JiangWind" title="twitter">twitter</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/days/" style="font-size: 10px;">days</a> <a href="/tags/dubbo/" style="font-size: 20px;">dubbo</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/lsof/" style="font-size: 10px;">lsof</a> <a href="/tags/markdown/" style="font-size: 20px;">markdown</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/perl/" style="font-size: 10px;">perl</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 20px;">ssh</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/windown10/" style="font-size: 10px;">windown10</a> <a href="/tags/wps/" style="font-size: 10px;">wps</a> <a href="/tags/随感/" style="font-size: 10px;">随感</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					本人毕业与2014年，这是一个历史性的年代，标志笔者开始步入这个程序世界的开始年代。
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="http://himg.bdimg.com/sys/portrait/item/fb00e58aa8e6bcabe59c9fe58caa3731346622.jpg">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">J.Wind</a></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/categories/随感">随感</a></li>
+		        
+					<li><a href="/picture/index.html">图片</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/jiangzhendong" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/2810839183" title="weibo">weibo</a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/JiangWind" title="twitter">twitter</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-linux-baidu-pan" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/14/linux-baidu-pan/" class="article-date">
+  	<time datetime="2016-08-14T01:53:29.000Z" itemprop="datePublished">8月 14 2016</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      linux 从百度网盘下载文件的方法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="方法1-wget"><a href="#方法1-wget" class="headerlink" title="方法1.wget"></a>方法1.wget</h2><p>wget是在Linux下开发的开放源代码的软件，作者是Hrvoje Niksic，后来被移植到包括Windows在内的各个平台上。它有以下功能和特点：</p>
+<ul>
+<li>（1）支持断点下传功能；这一点，也是网络蚂蚁和FlashGet当年最大的卖点，现在，Wget也可以使用此功能，那些网络不是太好的用户可以放心了；</li>
+<li>（2）同时支持FTP和HTTP下载方式；尽管现在大部分软件可以使用HTTP方式下载，但是，有些时候，仍然需要使用FTP方式下载软件；</li>
+<li>（3）支持代理服务器；对安全强度很高的系统而言，一般不会将自己的系统直接暴露在互联网上，所以，支持代理是下载软件必须有的功能；</li>
+<li>（4）设置方便简单；可能，习惯图形界面的用户已经不是太习惯命令行了，但是，命令行在设置上其实有更多的优点，最少，鼠标可以少点很多次，也不要担心是否错点鼠标；</li>
+<li>（5）程序小，完全免费；程序小可以考虑不计，因为现在的硬盘实在太大了；完全免费就不得不考虑了，即使网络上有很多所谓的免费软件，但是，这些软件的广告却不是我们喜欢的；<a id="more"></a>
+wget虽然功能强大，但是使用起来还是比较简单的，基本的语法是：wget [参数列表] URL。下面就结合具体的例子来说明一下wget的用法。<br>1、下载整个http或者ftp站点。<br>wget <a href="http://place.your.url/here" target="_blank" rel="external">http://place.your.url/here</a><br>这个命令可以将<a href="http://place.your.url/here" target="_blank" rel="external">http://place.your.url/here</a> 首页下载下来。使用-x会强制建立服务器上一模一样的目录，如果使用-nd参数，那么服务器上下载的所有内容都会加到本地当前目录。</li>
+</ul>
+<p>wget -r <a href="http://place.your.url/here" target="_blank" rel="external">http://place.your.url/here</a><br>这 个命令会按照递归的方法，下载服务器上所有的目录和文件，实质就是下载整个网站。这个命令一定要小心使用，因为在下载的时候，被下载网站指向的所有地址同 样会被下载，因此，如果这个网站引用了其他网站，那么被引用的网站也会被下载下来！基于这个原因，这个参数不常用。可以用-l number参数来指定下载的层次。例如只下载两层，那么使用-l 2。</p>
+<p>要是您想制作镜像站点，那么可以使用－m参数，例如：wget -m <a href="http://place.your.url/here" target="_blank" rel="external">http://place.your.url/here</a><br>这时wget会自动判断合适的参数来制作镜像站点。此时，wget会登录到服务器上，读入robots.txt并按robots.txt的规定来执行。</p>
+<p>2、断点续传。<br>当文件特别大或者网络特别慢的时候，往往一个文件还没有下载完，连接就已经被切断，此时就需要断点续传。wget的断点续传是自动的，只需要使用-c参数，例如：<br>wget -c <a href="http://the.url.of/incomplete/file" target="_blank" rel="external">http://the.url.of/incomplete/file</a><br>使用断点续传要求服务器支持断点续传。-t参数表示重试次数，例如需要重试100次，那么就写-t 100，如果设成-t 0，那么表示无穷次重试，直到连接成功。-T参数表示超时等待时间，例如-T 120，表示等待120秒连接不上就算超时。</p>
+<p>3、批量下载。<br>如果有多个文件需要下载，那么可以生成一个文件，把每个文件的URL写一行，例如生成文件download.txt，然后用命令：wget -i download.txt<br>这样就会把download.txt里面列出的每个URL都下载下来。（如果列的是文件就下载文件，如果列的是网站，那么下载首页）</p>
+<p>4、选择性的下载。<br>可以指定让wget只下载一类文件，或者不下载什么文件。例如：<br>wget -m –reject=gif <a href="http://target.web.site/subdirectory" target="_blank" rel="external">http://target.web.site/subdirectory</a><br>表示下载<a href="http://target.web.site/subdirectory，但是忽略gif文件。–accept=LIST" target="_blank" rel="external">http://target.web.site/subdirectory，但是忽略gif文件。–accept=LIST</a> 可以接受的文件类型，–reject=LIST拒绝接受的文件类型。</p>
+<p>5、密码和认证。<br>wget只能处理利用用户名/密码方式限制访问的网站，可以利用两个参数：<br>–http-user=USER设置HTTP用户<br>–http-passwd=PASS设置HTTP密码<br>对于需要证书做认证的网站，就只能利用其他下载工具了，例如curl。</p>
+<p>6、利用代理服务器进行下载。<br>如果用户的网络需要经过代理服务器，那么可以让wget通过代理服务器进行文件的下载。此时需要在当前用户的目录下创建一个.wgetrc文件。文件中可以设置代理服务器：<br>http-proxy = 111.111.111.111:8080<br>ftp-proxy = 111.111.111.111:8080<br>分别表示http的代理服务器和ftp的代理服务器。如果代理服务器需要密码则使用：<br>–proxy-user=USER设置代理用户<br>–proxy-passwd=PASS设置代理密码<br>这两个参数。<br>使用参数–proxy=on/off 使用或者关闭代理。<br>wget还有很多有用的功能，需要用户去挖掘。</p>
+<h3 id="附录："><a href="#附录：" class="headerlink" title="附录："></a>附录：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">命令格式：</div><div class="line">wget [参数列表] [目标软件、网页的网址]</div><div class="line"></div><div class="line">-V,–version 显示软件版本号然后退出；</div><div class="line">-h,–help显示软件帮助信息；</div><div class="line">-e,–execute=COMMAND 执行一个 “.wgetrc”命令</div><div class="line"></div><div class="line">-o,–output-file=FILE 将软件输出信息保存到文件；</div><div class="line">-a,–append-output=FILE将软件输出信息追加到文件；</div><div class="line">-d,–debug显示输出信息；</div><div class="line">-q,–quiet 不显示输出信息；</div><div class="line">-i,–input-file=FILE 从文件中取得URL；</div><div class="line"></div><div class="line">-t,–tries=NUMBER 是否下载次数（<span class="number">0</span>表示无穷次）</div><div class="line">-O –output-<span class="built_in">document</span>=FILE下载文件保存为别的文件名</div><div class="line">-nc, –no-clobber 不要覆盖已经存在的文件</div><div class="line">-N,–timestamping只下载比本地新的文件</div><div class="line">-T,–timeout=SECONDS 设置超时时间</div><div class="line">-Y,–proxy=on/off 关闭代理</div><div class="line"></div><div class="line">-nd,–no-directories 不建立目录</div><div class="line">-x,–force-directories 强制建立目录</div><div class="line"></div><div class="line">–http-user=USER设置HTTP用户</div><div class="line">–http-passwd=PASS设置HTTP密码</div><div class="line">–proxy-user=USER设置代理用户</div><div class="line">–proxy-passwd=PASS设置代理密码</div><div class="line"></div><div class="line">-r,–recursive 下载整个网站、目录（小心使用）</div><div class="line">-l,–level=NUMBER 下载层次</div><div class="line"></div><div class="line">-A,–accept=LIST 可以接受的文件类型</div><div class="line">-R,–reject=LIST拒绝接受的文件类型</div><div class="line">-D,–domains=LIST可以接受的域名</div><div class="line">–exclude-domains=LIST拒绝的域名</div><div class="line">-L,–relative 下载关联链接</div><div class="line">–follow-ftp 只下载FTP链接</div><div class="line">-H,–span-hosts 可以下载外面的主机</div><div class="line">-I,–include-directories=LIST允许的目录</div><div class="line">-X,–exclude-directories=LIST 拒绝的目录</div></pre></td></tr></table></figure>
+<p>中文文档名在平常的情况下会被编码， 但是在 –cut-dirs 时又是正常的，<br>wget -r -np -nH –cut-dirs=3 ftp://host/test/测试.txt<br>wget -r -np -nH -nd ftp://host/test/测试.txt<br>wget “ftp://host/test/*”  测试.txt</p>
+<p>由於不知名的原因,可能是为了避开特殊档名，wget 会自动将抓取档名的部分用 encode_string 处理过，所以该 patch 就把被 encode_string 处理成 “%3A” 这种东西， 用 decode_string 还原成 “:”，并套用在目录与档案名称的部分，decode_string 是 wget 内建的函式。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget -t0 -c -nH -x -np -b -m -P /home/sunny/NOD32view/  http:<span class="comment">//downloads1.kaspersky-labs.com/bases/ -o wget.log</span></div></pre></td></tr></table></figure></p>
+<p>美中不足的是,wget是单线程下载工具,网络环境相同的情况下,所以速度上可能跟不上axel</p>
+<h2 id="方法2-axel"><a href="#方法2-axel" class="headerlink" title="方法2.axel"></a>方法2.axel</h2><p>axel是linux下一个多线程下载工具。</p>
+<h3 id="Axel命令使用方法："><a href="#Axel命令使用方法：" class="headerlink" title="Axel命令使用方法："></a>Axel命令使用方法：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">axel 参数 文件下载地址</div><div class="line">可选参数：</div><div class="line">	-n   指定线程数</div><div class="line">	-o   指定另存为目录</div><div class="line">	-s   指定每秒的最大比特数</div><div class="line">	-q   静默模式</div></pre></td></tr></table></figure>
+<p>如从Diahosting下载lnmp安装包指定10个线程，存到/tmp/：<code>axel -n 10 -o /tmp/ http://soft.vpser.net/lnmp/lnmp0.7-full.tar.gz</code></p>
+<p>如果下载过程中下载中断可以再执行下载命令即可恢复上次的下载进度。</p>
+<p>首先如果你是获取百度网盘下实际的下载地址的问题:</p>
+<p>你可以将想下载的文件分享一下,创建一个公开的链接,然后在浏览器里输入链接地址.点击下载,之后浏览器会下载文件,此时取消下载,然后右键复制下载链接.(之所以要弄这一步是因为:你自己的网盘的权限问题.其他人是不可能直接登陆你的网盘下载文件的.这样转一下,只不过是把权限放开而已,无他,这样任何人都可以下载)<br>此后就是<code>axel -n 9</code> “下载链接地址”<br>注意如果下载链接地址没有加双引号,可能会出现http 401 unauthorized的错误.</p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/09/14/linux-command/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          linux学习心得
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/05/09/node-about/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">学习nodejs的一些小的知识积累</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="linux-baidu-pan" data-title="linux 从百度网盘下载文件的方法" data-url="http://jiangzhendong.github.io/2016/08/14/linux-baidu-pan/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 J.Wind <a href="/picture/welove/index.html">特殊入口</a>
+    	</div>
+      	<div class="footer-right">
+
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
+
+  </div>
+</body>
+</html>

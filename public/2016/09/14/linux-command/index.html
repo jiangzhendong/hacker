@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>linux学习心得 | 冰岛之都</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="linux文件删除，空间不释放文件系统使用率100%，然后删除了一个80G的文件，但是使用df -k查看，文件系统使用率还是100%
+工具/原料
+lsof方法/步骤初步判读是删除文件时有进程在使用文件，导致空间未释放。使用lsof | grep delete 查找到相应的进程号，然后用kill -9 删掉进程，在次使用df -k检查文件系统，发现可用空间为80G .">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux学习心得">
+<meta property="og:url" content="http://jiangzhendong.github.io/2016/09/14/linux-command/index.html">
+<meta property="og:site_name" content="冰岛之都">
+<meta property="og:description" content="linux文件删除，空间不释放文件系统使用率100%，然后删除了一个80G的文件，但是使用df -k查看，文件系统使用率还是100%
+工具/原料
+lsof方法/步骤初步判读是删除文件时有进程在使用文件，导致空间未释放。使用lsof | grep delete 查找到相应的进程号，然后用kill -9 删掉进程，在次使用df -k检查文件系统，发现可用空间为80G .">
+<meta property="og:updated_time" content="2016-12-13T09:20:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux学习心得">
+<meta name="twitter:description" content="linux文件删除，空间不释放文件系统使用率100%，然后删除了一个80G的文件，但是使用df -k查看，文件系统使用率还是100%
+工具/原料
+lsof方法/步骤初步判读是删除文件时有进程在使用文件，导致空间未释放。使用lsof | grep delete 查找到相应的进程号，然后用kill -9 删掉进程，在次使用df -k检查文件系统，发现可用空间为80G .">
+  
+    <link rel="alternative" href="/atom.xml" title="冰岛之都" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/ice.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-57948559-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+  <script src="/js/jq.snow.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="http://himg.bdimg.com/sys/portrait/item/fb00e58aa8e6bcabe59c9fe58caa3731346622.jpg">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">J.Wind</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/categories/随感">随感</a></li>
+				        
+							<li><a href="/picture/index.html">图片</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/jiangzhendong" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/u/2810839183" title="weibo">weibo</a>
+					        
+								<a class="twitter" target="_blank" href="https://twitter.com/JiangWind" title="twitter">twitter</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/days/" style="font-size: 10px;">days</a> <a href="/tags/dubbo/" style="font-size: 20px;">dubbo</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/lsof/" style="font-size: 10px;">lsof</a> <a href="/tags/markdown/" style="font-size: 20px;">markdown</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/perl/" style="font-size: 10px;">perl</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 20px;">ssh</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/windown10/" style="font-size: 10px;">windown10</a> <a href="/tags/wps/" style="font-size: 10px;">wps</a> <a href="/tags/随感/" style="font-size: 10px;">随感</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					本人毕业与2014年，这是一个历史性的年代，标志笔者开始步入这个程序世界的开始年代。
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="http://himg.bdimg.com/sys/portrait/item/fb00e58aa8e6bcabe59c9fe58caa3731346622.jpg">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">J.Wind</a></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/categories/随感">随感</a></li>
+		        
+					<li><a href="/picture/index.html">图片</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/jiangzhendong" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/2810839183" title="weibo">weibo</a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/JiangWind" title="twitter">twitter</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-linux-command" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/14/linux-command/" class="article-date">
+  	<time datetime="2016-09-14T01:53:29.000Z" itemprop="datePublished">9月 14 2016</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lsof/">lsof</a></li></ul>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      linux学习心得
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="linux文件删除，空间不释放"><a href="#linux文件删除，空间不释放" class="headerlink" title="linux文件删除，空间不释放"></a>linux文件删除，空间不释放</h2><p>文件系统使用率100%，然后删除了一个80G的文件，但是使用<code>df -k</code>查看，文件系统使用率还是100%</p>
+<h3 id="工具-原料"><a href="#工具-原料" class="headerlink" title="工具/原料"></a>工具/原料</h3><ul>
+<li>lsof<h3 id="方法-步骤"><a href="#方法-步骤" class="headerlink" title="方法/步骤"></a>方法/步骤</h3>初步判读是删除文件时有进程在使用文件，导致空间未释放。使用<code>lsof | grep delete</code> 查找到相应的进程号，然后用<code>kill -9 删掉进程</code>，在次使用<code>df -k</code>检查文件系统，发现可用空间为80G .<a id="more"></a>
+<h2 id="Linux-命令"><a href="#Linux-命令" class="headerlink" title="Linux 命令"></a>Linux 命令</h2></li>
+<li>立即让网络支持nat : <code>echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward; sudo iptables -t nat -I POSTROUTING -j MASQUERADE</code></li>
+<li>按cpu利用率从大到小排列进程:  <code>ps -eo &quot;%C : %p : %z : %a&quot;|sort -nr</code></li>
+<li>显示包含字符串的文件名:  <code>grep -l -r 字符串 路径</code></li>
+<li>统计80端口的连接并排序 :  <code>netstat -na|grep :80|awk &#39;{print $5}&#39;|awk -F: &#39;{print $1}&#39;|sort|uniq -c|sort -r -n</code></li>
+<li>显示当前内存大小:  <code>free -m |grep &quot;Mem&quot; | awk &#39;{print $2}&#39;</code></li>
+<li>统计每个单词的出现频率并排序 :  <code>awk &#39;{arr[$1]+=1 }END{for(i in arr){print arr[i]&quot;\t&quot;i}}&#39; FILE_NAME | sort -rn</code></li>
+<li>查看CPU信息:  <code>cat /proc/cpuinfo</code></li>
+<li>手工增加一条路由 :  sudo route add -net 192.168.0.0 netmask 255.255.255.0 gw 172.16.0.1</li>
+<li>控制台下显示中文 :  sudo apt-get install zhcon;zhcon –utf8 –drv=vga</li>
+<li>把终端加到右键菜单:  sudo apt-get install nautilus-open-terminal</li>
+<li>显示一小时以内的包含 xxxx 的文件:  find . -type f -mmin -60|xargs -i grep -l xxxx ‘{}’</li>
+<li>手工删除一条路由:  sudo route del -net 192.168.0.0 netmask 255.255.255.0 gw 172.16.0.1</li>
+<li>统计程序的内存耗用:  ps -eo fname,rss|awk ‘{arr[$1]+=$2} END {for (i in arr) {print i,arr[i]}}’|sort -k2 -nr</li>
+<li>vim 如何显示行号:  :set number</li>
+<li>显示最近2小时到8小时之内的文件:  find . -mmin +120 -mmin -480 -exec more {} \;</li>
+<li>命令关机:  sudo halt</li>
+<li>查看网络连接状态:  netstat -n | awk ‘/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}’</li>
+</ul>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/09/14/dubbo-jar-start/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          Dubbo基础篇_04_使用Maven构建Dubbo服务可执行jar包
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/14/linux-baidu-pan/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">linux 从百度网盘下载文件的方法</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="linux-command" data-title="linux学习心得" data-url="http://jiangzhendong.github.io/2016/09/14/linux-command/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 J.Wind <a href="/picture/welove/index.html">特殊入口</a>
+    	</div>
+      	<div class="footer-right">
+
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
+
+  </div>
+</body>
+</html>
