@@ -2,8 +2,9 @@
 menu:
   主页: /
   所有文章: /archives
-  随感: /categories/随感
+  随感: /categories/随感/
   图片: /picture/index.html
+  我是: /mplayer/index.html
 # SubNav
 subnav:
   github: "https://github.com/jiangzhendong"
