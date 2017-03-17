@@ -1,0 +1,60 @@
+//- LaTex
+script(async src="//cdn.bootcss.com/mathjax/2.7.0-beta.0/MathJax.js")
+
+//- Analytics tracking
+- var ga = theme.ga
+- var ba = theme.ba
+- var qq = theme.qq
+- var go = theme.go
+if ga
+    script
+        | (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',
+        != '"' + ga + '"'
+        | ,'auto');
+        | ga('set', 'appName',
+        != '"' + config.title + '"'
+        | );
+        | ga('send','pageview');
+if ba
+    script
+        | var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src =
+        != '"' + ba + '"'
+        | ;var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();
+
+if qq
+    script
+        | (function () { var sid =
+        != qq.sid
+        | ;cid =
+        != qq.cid
+        | ;var hm = document.createElement('script');
+        | hm.src = 'http://pingjs.qq.com/h5/stats.js';
+        | hm.setAttribute('name', 'MTAH5'); hm.setAttribute('sid', sid); hm.setAttribute('cid', cid);
+        | var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);
+        | }())
+
+//- script(async src=url_for("script/analytics.js"))
+
+if go
+    script
+        | var _vds = _vds || [];
+        | window._vds = _vds;
+        | (function(){
+        |   ;_vds.push(['setAccountId',
+        != '"' + go + '"'
+        |   ]);
+        |   (function() {
+        |       var vds = document.createElement('script');
+        |       vds.type='text/javascript';
+        |       vds.async = true;
+        |       vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+        |       var s = document.getElementsByTagName('script')[0];
+        |       s.parentNode.insertBefore(vds, s);
+        |   })();
+        | })();
+
+
+//- pageAccelerator
+script(async src="//raw.githack.com/Easyfood/pageAccelerator/master/dist/page-accelerator.min.js")
+script(async src=url_for("script/loading.js"))
+script(async src=url_for("script/photo.js"))

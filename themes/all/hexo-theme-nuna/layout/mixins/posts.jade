@@ -1,0 +1,51 @@
+
+//- 生成随机不重复数
+- var thumbs = theme.thumbs.sort(function(){return 0.5 - Math.random()})
+
+mixin postCover(item, showThumb)
+  article.entry-item(itemscope itemtype='http://schema.org/Article')
+    if showThumb
+        - var pt = thumbs.pop(); thumbs.unshift(pt)
+        - var re = /^(http|https|\/\/)/
+        - var defthumb = re.test(pt) ? pt : url_for(pt)
+        - var thumb = re.test(item.thumb) ? item.thumb : item.path + item.thumb
+        - var coverUrl = item.thumb ? thumb : defthumb
+        .post-thumb(itemprop='thumb' style= 'background-image: url(#{coverUrl})')
+
+    a(href= url_for(item.path) itemprop='url')
+      h3.post-name(itemprop='name')
+        != item.title
+      .post-description(itemprop='description')
+        != item.excerpt
+
+//- Index Page
+mixin home()
+    .home
+        .container
+            .entry-header
+                h1.entry-title
+                    != config.title
+                p.entry-description
+                    != config.description
+            .entry-list
+                - page.posts.each(function (item) {
+                    +postCover(item, true)
+                - })
+
+//- Archive Page
+mixin archive()
+    .archive
+        .container
+            - var ym = 0
+            - var change = false
+
+            - page.posts.each(function (item) {
+                - var d = date(item.date, 'MMM, YYYY')
+                - change = ym !== d
+                - ym = change ? d : ym
+                if change
+                    .entry-header
+                        h2.entry-title
+                            != 'Posts on ' + ym
+                +postCover(item)
+            - })

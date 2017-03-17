@@ -1,0 +1,44 @@
+menu:
+    home: /
+    archive: /archives/
+    about: /about/
+
+favicon: /favicon.ico
+logo: /logo.png
+
+# 首页文章默认封面
+thumbs: [//ww4.sinaimg.cn/large/801b780agw1f8afxvijp9j208c08cjsa.jpg,
+        //ww1.sinaimg.cn/large/801b780agw1f8afxv7r1uj208c08cmz0.jpg,
+        //ww1.sinaimg.cn/large/801b780agw1f8afxumedlj208c08cgmy.jpg,
+        //ww1.sinaimg.cn/large/801b780agw1f8afxu0yh3j208c08cjsi.jpg,
+        //ww3.sinaimg.cn/large/801b780agw1f8afxtihj7j208c08cwfh.jpg,
+        //ww4.sinaimg.cn/large/801b780agw1f8afxsv423j20b408cgmh.jpg,
+        //ww4.sinaimg.cn/large/801b780agw1f8afxsfoomj20b407djs6.jpg,
+        //ww1.sinaimg.cn/large/801b780agw1f8afxs19ppj208c08cdg4.jpg,
+        //ww1.sinaimg.cn/large/801b780agw1f8afxrj357j208c08cq3n.jpg,
+        //ww4.sinaimg.cn/large/801b780agw1f8afxqrz8xj208c08cdga.jpg]
+
+# Comment
+# disqus: pupa
+# duoshuo: xwartz
+
+# Analytics
+# google-analytics:
+ga: UA-69822347-1
+# baidu-analytics:
+# ba: //hm.baidu.com/hm.js?b9e5254ddb0a9c4c4cd158df0d05a54c
+# qq mta
+qq:
+    sid: 500303098
+    cid: 500303108
+# growingio
+go: 90b580e047dd0007
+
+# theme version
+version: 1.0.3
+# theme branch
+branch: next
+# theme font cdn url
+font: //at.alicdn.com/t/font_1472710214_6648843.css
+# theme style cdn url
+css: //raw.githack.com/xwartz/hexo-theme-nuna/next/source/style/main.css

@@ -1,0 +1,11 @@
+
+{% if page.prev or page.next %}
+    <div class="pagination center">
+        {{ paginator({
+            prev_text: '<i class="fa fa-angle-left"></i>',
+            next_text: '<i class="fa fa-angle-right"></i>',
+            mid_size: 3
+        }) }}
+    </div>
+{% endif %}
+

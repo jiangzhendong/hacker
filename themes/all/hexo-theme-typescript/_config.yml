@@ -1,0 +1,72 @@
+# Meta
+description: A minimal hexo theme.
+keywords: hexo,theme,typescript,otakism,otaku
+site_desc: otaku keeps alive
+
+# Navigation
+navigation:
+- name: Home
+  slug: home
+  url: /
+- name: About
+  slug: about
+  url: /about
+- name: Archives
+  slug: archives
+  url: /archives
+
+# Search
+search: 
+  enable: true
+  service: google # google/hexo/algolia/azure/baidu
+  # google 
+  google_api_key:
+  google_engine_id:
+  # algolia
+  algolia_app_id:
+  algolia_api_key:
+  algolia_index_name:
+  # azure
+  azure_service_name:
+  azure_index_name:
+  azure_query_key:
+  # baidu
+  baidu_api_id:
+
+# Miscellaneous
+google_analytics:
+favicon: /favicon.png
+author_url: http://rakugaki.me
+
+# Less
+less:
+  compress: true
+
+# use url, not username
+social:
+- slug: email
+  url: #mailto:i@artifact.me
+- slug: github
+  url: https://github.com/artchen
+- slug: twitter
+  url: https://twitter.com/otakism
+- slug: rss
+	url: /atom.xml
+- slug: google
+  url: https://plus.google.com/+ArtChenOtakism/posts
+- slug: facebook
+  url: # https://www.facebook.com/zanchoret
+- slug: linkedin
+  url: # https://www.linkedin.com/in/buzun
+- slug: sina-weibo
+  url: http://weibo.com/otakism/
+- slug: tumblr
+  url: # http://artchen.tumblr.com
+- slug: dribbble
+  url: # https://dribbble.com/artchen
+- slug: pinterest
+  url: # https://www.pinterest.com/otakism/
+- slug: instagram
+  url: # https://instagram.com/otakism/
+- slug: behance
+  url: # https://www.behance.net/artchen

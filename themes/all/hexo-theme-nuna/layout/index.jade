@@ -1,0 +1,12 @@
+extends partial/layout
+
+block header
+    include partial/header
+
+block container
+    include mixins/posts
+    +home()
+
+block pagination
+    include mixins/paginator
+    +home()

@@ -46,6 +46,6 @@ visits = 1
 else
 visits = parseInt(visits) + 1
 setCookie("counter", visits, now)
-document.write("ÄúÊÇµÚ" + visits + "·ÃÎÊ±¾×¨ÌâµÄ£¡")
+document.write("ï¿½ï¿½ï¿½Çµï¿½" + visits + "ï¿½ï¿½ï¿½Ê±ï¿½×¨ï¿½ï¿½ï¿½Ä£ï¿½")
 // -->
 </script>

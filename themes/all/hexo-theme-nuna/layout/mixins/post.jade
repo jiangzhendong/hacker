@@ -1,0 +1,36 @@
+
+mixin postInfo(item)
+  .entry-meta
+    time.updated(itemprop='datePublished' datetime=full_date(item.date, 'dddd, MMMM Do YYYY, h:mm:ss a'))
+      != full_date(item.date, 'll')
+    em.post-count
+      != wordcount(item.content) + ' words'
+
+
+//- Post Page
+mixin post(item)
+    div(class='post #{item.layout}')
+        article.hentry(itemscope itemtype='http://schema.org/Article')
+            if item.cover
+                .entry-cover(itemprop='image' style= 'background-image: url(#{item.cover})')
+
+            .container
+                .entry-header
+                    h1.entry-title
+                        != item.title
+                    .entry-description
+                        != item.excerpt
+                    if item.layout == 'post'
+                        +postInfo(item)
+
+                .entry-content(itemprop='articleBody')
+                    != item.more
+
+                if item.layout == 'post'
+                    .entry-extra
+                        .entry-tags
+                            if item.tags && item.tags.length
+                                - item.tags.each(function(tag) {
+                                    a.tag(href=url_for(tag.path))
+                                        != tag.name
+                                - })

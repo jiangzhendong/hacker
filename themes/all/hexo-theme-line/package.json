@@ -1,0 +1,27 @@
+{
+  "name": "hexo-theme-line",
+  "version": "1.0.0",
+  "description": "Dead simple and beautify Hexo theme",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhaobao/hexo-theme-line.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhaobao/hexo-theme-line/issues"
+  },
+  "homepage": "https://github.com/zhaobao/hexo-theme-line#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-jade": "^1.1.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0"
+  }
+}

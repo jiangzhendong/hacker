@@ -1,0 +1,132 @@
+@charset "UTF-8";
+@import "_var/colors";
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url("../fonts/proxima-nova-thin.woff") format("woff");
+    font-weight: 100;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url("../fonts/proxima-nova-light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url("../fonts/proxima-nova-regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url("../fonts/proxima-nova-semibold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url("../fonts/proxima-nova-bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url("../fonts/proxima-nova-extrabold.woff") format("woff");
+    font-weight: 800;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url("../fonts/proxima-nova-black.woff") format("woff");
+    font-weight: 900;
+    font-style: normal
+}
+
+html,body {
+    height: 100vh;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    color: $color_gray;
+    background-color: $color_bg;
+    font-family: "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 300;
+}
+
+code {
+    overflow-x: scroll;
+}
+
+img {
+    max-width: 100%;
+    max-height: 500px;
+}
+
+.pull-right {
+    float: right;
+}
+
+blockquote {
+    border-left: 5px solid $color_border;
+    margin-left: 0;
+    padding-left: 2em;
+}
+
+code {
+    font-size: 14px;
+    max-width: 100%;
+}
+
+pre {
+    max-width: 100%;
+    white-space: pre-wrap;
+}
+
+h1::before {
+    content: "#";
+    padding-right: 5px;
+}
+
+h2::before {
+    content: "##";
+    padding-right: 5px;
+}
+
+h3::before {
+    content: "###";
+    padding-right: 5px;
+}
+
+h4::before {
+    content: "####";
+    padding-right: 5px;
+}
+
+h5::before {
+    content: "#####";
+    padding-right: 5px;
+}
+
+h6::before {
+    content: "######";
+    padding-right: 5px;
+}
+
+#disqus_thread {
+    padding: 20px;
+}

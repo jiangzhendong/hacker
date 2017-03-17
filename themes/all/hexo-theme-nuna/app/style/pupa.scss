@@ -1,0 +1,131 @@
+.pupa {
+  font-family: "PingFang TC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+  line-height: 1.75;
+}
+
+::-moz-selection {
+  background-color: #222;
+  color: #f9f9f9;
+}
+
+::selection {
+  background-color: #222;
+  color: #f9f9f9;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px rgba(0,0,0,0.3);
+    border-radius: 4px;
+    background-color: #efefef;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+    background-color: #efefef;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    box-shadow: inset 0 0 2px rgba(0,0,0,.3);
+    background-color: #555;
+}
+
+
+.pupa {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Georgia", "PingFang TC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    }
+}
+
+.pupa a {
+  word-wrap: break-word;
+}
+
+.pupa h1 a,
+.pupa h2 a,
+.pupa h3 a {
+  text-decoration: none;
+}
+
+.pupa strong,
+.pupa b {
+  font-weight: 700;
+  color: #222223;
+}
+
+.pupa em {
+  font-style: italic;
+  color: #222223;
+}
+
+.pupa img {
+  max-width: 100%;
+  height: auto;
+  margin: 0.2em 0;
+}
+
+.pupa a img {
+  border: none;
+}
+
+.pupa hr {
+  display: block;
+  width: 14%;
+  margin: 40px auto 34px;
+  border: 0 none;
+  border-top: 3px solid #efefef;
+}
+
+.pupa ul,
+.pupa ol {
+  margin: 0 0 24px 6px;
+  padding-left: 16px;
+}
+
+.pupa ul {
+  list-style-type: square;
+}
+
+.pupa ol {
+  list-style-type: decimal;
+}
+
+.pupa li {
+  margin-bottom: 0.2em;
+}
+
+.pupa li ul,
+.pupa li ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 14px;
+}
+
+.pupa li ul {
+  list-style-type: disc;
+}
+
+.pupa li ul ul {
+  list-style-type: circle;
+}
+
+.pupa li p {
+  margin: 0.4em 0 0.6em;
+}
+
+.pupa .unstyled {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pupa .disabled {
+  color: #555;
+  opacity: 0.8;
+}

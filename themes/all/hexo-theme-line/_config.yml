@@ -1,0 +1,16 @@
+# Theme configuration
+
+# menus
+menus:
+  home: /
+  tags: tags
+  about: about
+
+# zoom image support
+zoom: true
+
+# comments
+disqus:
+
+# GA support
+ga:

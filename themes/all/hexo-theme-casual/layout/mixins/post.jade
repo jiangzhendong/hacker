@@ -1,0 +1,93 @@
+mixin postInfo(item)
+  .post-info
+    .post-date
+      h6.ui.header
+        i.calendar.icon
+        .content
+          != full_date(item.date, 'll')
+
+mixin postTags(item)
+  if item.tags && item.tags.length
+    .post-tags
+      each tag in item.tags.toArray()
+        - var colorArr = ['red','orange','yellow','olive','green','teal','blue','violet','purple','pink','brown','grey','black'];
+        - var index = Math.floor(Math.random()*colorArr.length);
+          a(class="ui #{colorArr[index]} label" href= url_for(tag.path))
+            != tag.name
+
+//- Index Page
+mixin posts()
+  ul.home.post-list
+    - page.posts.each(function (item) {
+      li.post-list-item
+        .ui.raised.padded.text.container.segment
+          h2.ui.header
+            a.post-title-link(href= url_for(item.path))
+              != item.title
+          +postInfo(item)
+          .post-content
+            != item.excerpt
+          +postTags(item)
+          a.read-more.ui.label(href= url_for(item.path))
+            != '更多 &nbsp&nbsp'
+            i.ellipsis.horizontal.icon
+    - })
+
+//- Archive Page
+mixin postList()
+  .archive
+    .ui.animated.list
+      - var year = 0;
+      - var change = false;
+      - page.posts.each(function (item) {
+          - var itemYear = date(item.date, 'YYYY') - 0;
+          - change = year !== itemYear;
+          - year = change ? itemYear : year;
+          if change 
+            h2.archive-year!=year
+          .post-item.item
+            +postInfo(item)
+            a.post-title-link(href= url_for(item.path))
+              != item.title
+      - })
+
+mixin archiveList()
+  ul.archive-list
+    - var month = 0, year = 0;
+    - var years = {};
+    - var change = false;
+    - site.posts.each(function (item) {
+        - var itemMonth = date(item.date, 'MM') - 0;
+        - change = month !== itemMonth;
+        - month = change ? itemMonth : month;
+        if change
+          - year = date(item.date, 'YYYY') - 0;
+          - years[year] = years[year]? years[year] : {};
+          - years[year][month] = 1;
+        else
+          - year = date(item.date, 'YYYY') - 0;
+          - years[year][month]++;
+    - })
+    - for(y in years) {
+      - for(m in years[y]) {
+        li.archive-list-item
+          - var timeLabel = y + '年' + m + '月'; 
+          a.archive-list-link(href='/archives/#{y}/0#{m}')!=timeLabel
+            span (#{years[y][m]})
+      - } 
+    - }
+
+//- Tags Page
+mixin tagList()
+  .tag
+    != tagcloud({min_font: 14, max_font: 14, amount: 100, orderby: 'count', color: false})
+
+//- Post Page
+mixin post(item)
+  .post
+    article.post-block
+      h1.post-title
+        != item.title
+      +postInfo(item)
+      .post-content
+        != item.content

@@ -1,0 +1,22 @@
+div.nav.j_nav
+
+    // nav header
+    div.nav__header
+        a(href=url_for("/"))
+            h1= config.title
+
+    // nav body
+    div.nav__body
+        ul.nav__items
+            each value, key in theme.menus
+                - var ucFirstKey = key[0].toUpperCase() + key.substr(1);
+                if key == pageName.toLowerCase()
+                    li.nav__item.active
+                        a(href=url_for(value))= ucFirstKey
+                else
+                    li.nav__item
+                        a(href=url_for(value))= ucFirstKey
+
+    // nav footer
+    div.nav__footer
+        a(href="https://github.com/zhaobao") Theme By

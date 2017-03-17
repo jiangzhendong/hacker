@@ -1,0 +1,120 @@
+site:
+  title: Jamling's Blog and Project Site
+  subtitle: Jamling's Blog & Open Project
+  description: Jamling's Open Project include Java, Android, Eclipse and Technology Blog Articles.
+
+project:
+  overview: Overview
+  download: Downloads
+  userguide: User Guide
+  develop: Developer
+  get_started: Get started
+  docs: Docs
+  change: Change logs
+  api: APIs
+
+page:
+  contents: Table Of Contents
+  back_to_top: Back to Top
+  improve: Improve this doc
+  prev: Prev
+  next: Next
+  last_updated: "Last updated: %s"
+  more: Read more
+  path: 'Path: '
+  blog: Blog
+  language: Language
+  written_on: 'Post at: '
+  visits: 'Site Visits: '
+  password_tip: 'Please input password to view this page'
+  password_error: 'Error password, you have no right to view the content!'
+
+article:
+  views: Views
+sns:
+  share: Share
+  comment: Comment
+  like: Like
+  view: Viewer
+  weibo: Weibo
+  wechat: Wechat
+  fb: Facebook
+  twitter: Twitter
+  copy: Copy Link
+  more: More
+  one: One Share
+
+tag:
+  name: &tag.name Tags
+  label: *tag.name
+  empty: No tags
+  loading: Loading tags...
+
+category:
+  name: &category.name Category
+  label: *category.name
+  empty: No categories
+  loading: Loading categories...
+
+archive:
+  name: &archive.name Archives
+  empty: No posts
+
+widget:
+  recent: Recents
+  search: Search
+  hot:
+    zero: No hot post
+    other: Hot Posts
+  recent_comments: Recent Comments
+  recent_visitors: Recent Visitors
+  announce: Announce
+  about: About
+  links: Links
+
+ajax:
+  loading: Loading...
+  error: Load failed
+
+hljs:
+  left: Code
+  right: ':'
+  copy: Copy to clipboard
+
+menu:
+  home: Home
+  project: Projects
+  category: *category.name
+  tag: *tag.name
+  archive: *archive.name
+  about: About
+  donate: Donate
+
+donate:
+  name: Donate
+  page: # page / post / article
+    title: Donate
+    close: Close
+    desc: Dear reader, if you feel this good, could you rewark me a `bread` as awark? Thank you very much~
+  main: # donate list main (records)
+    title: Donate Records
+    index: Index
+    name: Name
+    amount: Amount
+    date: Date
+  aside: # donate list aside
+    count: Top Count
+    sum: Top Amount
+    prj_count: Top Project Count
+    prj_sum: Top Project Amount
+  th: # donate list thead name
+    count: Counts
+    sum: Amount
+    project: Project
+
+hexo-theme-nova:
+  userguide:
+    layouts: Layouts
+    helpers: Helpers
+    front-matter: Front-matter
+    plugins: Plugins

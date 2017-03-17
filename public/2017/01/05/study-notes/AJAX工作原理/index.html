@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>冰岛之都</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="AJAX工作原理地址：http://blog.xieliqun.com/2016/08/08/ajax/
+
+AJAX 是一种用于创建快速动态网页的技术。通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。
+
+
+一、ajax所包含的技术 大家都知道ajax并非一种新的技术，而是几种原有技术的结合体。它由下列技术组合而">
+<meta property="og:type" content="article">
+<meta property="og:title" content="冰岛之都">
+<meta property="og:url" content="http://jiangzhendong.github.io/2017/01/05/study-notes/AJAX工作原理/index.html">
+<meta property="og:site_name" content="冰岛之都">
+<meta property="og:description" content="AJAX工作原理地址：http://blog.xieliqun.com/2016/08/08/ajax/
+
+AJAX 是一种用于创建快速动态网页的技术。通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。
+
+
+一、ajax所包含的技术 大家都知道ajax并非一种新的技术，而是几种原有技术的结合体。它由下列技术组合而">
+<meta property="og:updated_time" content="2017-01-05T06:32:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="冰岛之都">
+<meta name="twitter:description" content="AJAX工作原理地址：http://blog.xieliqun.com/2016/08/08/ajax/
+
+AJAX 是一种用于创建快速动态网页的技术。通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。
+
+
+一、ajax所包含的技术 大家都知道ajax并非一种新的技术，而是几种原有技术的结合体。它由下列技术组合而">
+  
+    <link rel="alternative" href="/atom.xml" title="冰岛之都" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/ice.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-57948559-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+  <script src="/js/jq.snow.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="http://himg.bdimg.com/sys/portrait/item/fb00e58aa8e6bcabe59c9fe58caa3731346622.jpg">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">J.Wind</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/categories/随感/">随感</a></li>
+				        
+							<li><a href="/picture/index.html">图片</a></li>
+				        
+							<li><a href="/OpenNote/index.html">我是</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/jiangzhendong" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/u/2810839183" title="weibo">weibo</a>
+					        
+								<a class="twitter" target="_blank" href="https://twitter.com/JiangWind" title="twitter">twitter</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/apt/" style="font-size: 10px;">apt</a> <a href="/tags/chat/" style="font-size: 10px;">chat</a> <a href="/tags/days/" style="font-size: 10px;">days</a> <a href="/tags/docker/" style="font-size: 13.33px;">docker</a> <a href="/tags/dpkg/" style="font-size: 10px;">dpkg</a> <a href="/tags/dubbo/" style="font-size: 13.33px;">dubbo</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/java/" style="font-size: 16.67px;">java</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/logs/" style="font-size: 10px;">logs</a> <a href="/tags/lsof/" style="font-size: 10px;">lsof</a> <a href="/tags/markdown/" style="font-size: 13.33px;">markdown</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/perl/" style="font-size: 10px;">perl</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/springboot/" style="font-size: 10px;">springboot</a> <a href="/tags/ssh/" style="font-size: 13.33px;">ssh</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/windown10/" style="font-size: 10px;">windown10</a> <a href="/tags/wps/" style="font-size: 10px;">wps</a> <a href="/tags/随感/" style="font-size: 10px;">随感</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					本人毕业与2014年，这是一个历史性的年代，标志笔者开始步入这个程序世界的开始年代。
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="http://himg.bdimg.com/sys/portrait/item/fb00e58aa8e6bcabe59c9fe58caa3731346622.jpg">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">J.Wind</a></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/categories/随感/">随感</a></li>
+		        
+					<li><a href="/picture/index.html">图片</a></li>
+		        
+					<li><a href="/OpenNote/index.html">我是</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/jiangzhendong" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/2810839183" title="weibo">weibo</a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/JiangWind" title="twitter">twitter</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-study-notes/AJAX工作原理" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/01/05/study-notes/AJAX工作原理/" class="article-date">
+  	<time datetime="2017-01-05T06:32:29.000Z" itemprop="datePublished">1月 5 2017</time>
+</a>
+      
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="AJAX工作原理"><a href="#AJAX工作原理" class="headerlink" title="AJAX工作原理"></a>AJAX工作原理</h1><p>地址：<a href="http://blog.xieliqun.com/2016/08/08/ajax/" target="_blank" rel="external">http://blog.xieliqun.com/2016/08/08/ajax/</a></p>
+<blockquote>
+<p>AJAX 是一种用于创建快速动态网页的技术。通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。</p>
+</blockquote>
+<hr>
+<h3 id="一、ajax所包含的技术"><a href="#一、ajax所包含的技术" class="headerlink" title="一、ajax所包含的技术"></a>一、ajax所包含的技术</h3><p> 大家都知道ajax并非一种新的技术，而是几种原有技术的结合体。它由下列技术组合而成。</p>
+<ul>
+<li>使用CSS和XHTML来表示。</li>
+<li>使用DOM模型来交互和动态显示。</li>
+<li>使用XMLHttpRequest来和服务器进行异步通信。</li>
+<li>使用javascript来绑定和调用。</li>
+</ul>
+<p>在上面几中技术中，除了XmlHttpRequest对象以外，其它所有的技术都是基于web标准并且已经得到了广泛使用的，XMLHttpRequest虽然目前还没有被W3C所采纳，但是它已经是一个事实的标准，因为目前几乎所有的主流浏览器都支持它。</p>
+<h3 id="二、怎样创建ajax"><a href="#二、怎样创建ajax" class="headerlink" title="二、怎样创建ajax"></a>二、怎样创建ajax</h3><p>Ajax的原理简单来说通过XmlHttpRequest对象来向服务器发异步请求，从服务器获得数据，然后用javascript来操作DOM而更新页面。这其中最关键的一步就是从服务器获得请求数据。原生创建ajax可分为以下四步。</p>
+<h4 id="1、创建XMLHttpRequest对象"><a href="#1、创建XMLHttpRequest对象" class="headerlink" title="1、创建XMLHttpRequest对象"></a>1、创建XMLHttpRequest对象</h4><p>所有现代浏览器（IE7+、Firefox、Chrome、Safari 以及 Opera）均内建 XMLHttpRequest 对象。<br>创建 XMLHttpRequest 对象的语法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div></pre></td></tr></table></figure></p>
+<p>老版本的 Internet Explorer （IE5 和 IE6）使用 ActiveX 对象：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</div></pre></td></tr></table></figure></p>
+<p>为了应对所有的现代浏览器，包括 IE5 和 IE6，请检查浏览器是否支持 XMLHttpRequest 对象。如果支持，则创建 XMLHttpRequest 对象。如果不支持，则创建 ActiveXObject ：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xhr;</div><div class="line"><span class="keyword">if</span>(XMLHttpRequest)&#123;</div><div class="line">	xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">	xhr = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="2、准备请求"><a href="#2、准备请求" class="headerlink" title="2、准备请求"></a>2、准备请求</h4><p>初始化该XMLHttpRequest对象，接受三个参数：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xhr.open(method,url,<span class="keyword">async</span>);</div></pre></td></tr></table></figure></p>
+<p>第一个参数表示请求类型的字符串，其值可以是GET或者POST。<br>GET请求：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xhr.open(<span class="string">"GET"</span>,demo.php?name=tsrot&amp;age=<span class="number">24</span>,<span class="literal">true</span>);</div></pre></td></tr></table></figure></p>
+<p>POST请求：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xhr.open(<span class="string">"POST"</span>,demo.php,<span class="literal">true</span>);</div></pre></td></tr></table></figure></p>
+<p>第二个参数是要作为请求发送目标的URL。<br>第三个参数是true或false，表示请求是以异步还是同步的模式发出。（默认为true，一般不建议为false）</p>
+<ul>
+<li>false：同步模式发出的请求会暂停所有javascript代码的执行，知道服务器获得响应为止，如果浏览器在连接网络时或者在下载文件时出了故障，页面就会一直挂起。 </li>
+<li>true：异步模式发出的请求，请求对象收发数据的同时，浏览器可以继续加载页面，执行其他javascript代码</li>
+</ul>
+<h4 id="3、发送请求"><a href="#3、发送请求" class="headerlink" title="3、发送请求"></a>3、发送请求</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xhr.send();</div></pre></td></tr></table></figure>
+<p>一般情况下，使用Ajax提交的参数多是些简单的字符串，可以直接使用GET方法将要提交的参数写到open方法的url参数中，此时send方法的参数为null或为空。</p>
+<p>GET请求：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">xhr.open(<span class="string">"GET"</span>,demo.php?name=tsrot&amp;age=<span class="number">24</span>,<span class="literal">true</span>);</div><div class="line">xhr.send(<span class="literal">null</span>);</div></pre></td></tr></table></figure></p>
+<p>POST请求：<br>如果需要像 HTML 表单那样 POST 数据，请使用 setRequestHeader() 来添加 HTTP 头。然后在 send() 方法中规定您希望发送的数据：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">xhr.open(<span class="string">"POST"</span>,demo.php,<span class="literal">true</span>);</div><div class="line">xhr.setRequestHeder(<span class="string">"Content-Type"</span>,<span class="string">"application/x-www-form-urlencoded;charset=UTF-8"</span>);</div><div class="line">xhr.send(<span class="string">"name="</span>+userName+<span class="string">"&amp;age="</span>+userAge);</div></pre></td></tr></table></figure></p>
+<h4 id="4、处理响应"><a href="#4、处理响应" class="headerlink" title="4、处理响应"></a>4、处理响应</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span>(xhr.readyState == <span class="number">4</span> &amp;&amp; xhr.status == <span class="number">200</span>)&#123;</div><div class="line">		<span class="built_in">console</span>.log(xhr.responseText);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>onreadystatechange 事件：<br>当请求被发送到服务器时，我们需要执行一些基于响应的任务。每当 readyState 改变时，就会触发 onreadystatechange 事件。</p>
+<p>readyState属性：<br>0：已经创建对象，但还没有调用open()方法。<br>1：已经调用open()方法，但还没有发送请求。<br>2：请求已经发送，标题和状态已经收到，并可用。<br>3：接收到来自服务器的响应。<br>4：接收完请求数据，表示已经完成请求。</p>
+<p>status属性：<br>200:”OK”<br>404: 未找到页面</p>
+<p>responseText：获得字符串形式的响应数据<br>responseXML：获得 XML 形式的响应数据<br>返回值一般为json字符串，可以用JSON.parse(xhr.responseText)转化为JSON对象。</p>
+<h4 id="5、完整例子"><a href="#5、完整例子" class="headerlink" title="5、完整例子"></a>5、完整例子</h4><p>demo.html<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xhr;</div><div class="line"><span class="keyword">if</span>(XMLHttpRequest)&#123;</div><div class="line">	xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">	xhr = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">xhr.open(<span class="string">"GET"</span>,<span class="string">"./data.json"</span>,<span class="literal">true</span>);</div><div class="line">xhr.send();</div><div class="line"></div><div class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span>(xhr.readyState == <span class="number">4</span> &amp;&amp; xhr.status == <span class="number">200</span>)&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="built_in">JSON</span>.parse(xhr.responseText).name);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>data.json<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	<span class="attr">"name"</span>:<span class="string">"tsrot"</span>,</div><div class="line">	<span class="attr">"age"</span>:<span class="number">24</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="三、ajax应用场景"><a href="#三、ajax应用场景" class="headerlink" title="三、ajax应用场景"></a>三、ajax应用场景</h3><ul>
+<li>场景 1. 数据验证</li>
+<li>场景 2. 按需取数据</li>
+<li>场景 3. 自动更新页面</li>
+</ul>
+<h3 id="四、ajax优缺点"><a href="#四、ajax优缺点" class="headerlink" title="四、ajax优缺点"></a>四、ajax优缺点</h3><p>优点：<br>1、页面无刷新，用户体验好。<br>2、异步通信，更加快的响应能力。<br>3、减少冗余请求，减轻了服务器负担<br>4、基于标准化的并被广泛支持的技术，不需要下载插件或者小程序。</p>
+<p>缺点：<br>1、ajax干掉了back按钮，即对浏览器后退机制的破坏。<br>2、存在一定的安全问题。<br>3、对搜索引擎的支持比较弱。<br>4、破坏了程序的异常机制。<br>5、无法用URL直接访问。</p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/01/05/study-notes/Arguments对象作用深度研究/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/01/05/study-notes/深入了解JavaScript，从作用域链开始（1）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="study-notes/AJAX工作原理" data-title="" data-url="http://jiangzhendong.github.io/2017/01/05/study-notes/AJAX工作原理/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 J.Wind <a href="/picture/welove/index.html">特殊入口</a>
+    	</div>
+      	<div class="footer-right">
+
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
+
+  </div>
+</body>
+</html>

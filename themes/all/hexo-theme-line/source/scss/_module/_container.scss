@@ -1,0 +1,43 @@
+@charset "UTF-8";
+@import "../_var/colors";
+@import "../_var/dimense";
+
+.img-h300 {
+    max-height: 300px;
+}
+
+.img-h600 {
+    max-height: 600px;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+}
+
+.menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    border: 1px solid $color_gray;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    background: $color_bg;
+    transition: all 400ms;
+    &:hover {
+        $line_sep: 2px;
+        background: repeating-linear-gradient(135deg,
+                $color_border,
+                $color_border $line_sep,
+                transparent $line_sep,
+                transparent 2 * $line_sep);
+    }
+    display: none;
+}
+
+@media (max-width: $md) {
+    .menu {
+        display: block;
+    }
+}
