@@ -1,5 +1,6 @@
-# 折腾：coding.net IDE node环境的安装
-
+title: 折腾：coding.net IDE node环境的安装
+date: 2017-1-5 15:53:29
+---
 地址：http://blog.xieliqun.com/2016/08/27/online-IDE-node-enviroment/
 
 > 作为一个码农，我们经常会有这样一个痛点：项目出现一个紧急bug，但自己又不在公司，怎办呢？虽然项目可能在git或者svn上，但clone下来安装测试环境也是个麻烦的是啊。于是，我们想到了在线IDE。作为一个前端开发者nodeJS环境是非常重要的，今天花了一个多小时折腾了下[coding.net](https://ide.coding.net)。
@@ -17,7 +18,7 @@
 ### 安装nvm
 
 nvm是nodejs版本管理工具。可以在多个nodejs版本中进行切换，降低了升级nodejs时的成本。
-
+<!-- more -->
 下载nvm，直接在终端面板把它clone过来就行了。为了不影响项目目录，我们把它clone在项目根目录的同级目录。
 ```bash
 -> ~ cd ..

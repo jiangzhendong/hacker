@@ -1,6 +1,6 @@
-﻿# JavaScript中this指向
-
-------
+﻿title: JavaScript中this指向
+date: 2017-1-5 15:53:29
+---
 
 > 对于JavaScript初学者来说，this指针的指向问题一直是很混乱的问题。在不同的场景下，this会化身不同的对象。有一种观点认为，只有正确掌握了
 > JavaScript 中的 this 关键字，才算是迈入了 JavaScript
@@ -10,8 +10,6 @@
 随着函数使用场合的不同，this的值会发生变化。但是有一个总的原则，那就是this指的是，**调用函数的那个对象**。
 
 
-----------
-
 ## 1、	指向window的隐式指向
 ```javascript
 function sayHello(){
@@ -20,6 +18,7 @@ function sayHello(){
 }
 sayHello()       //hello tsrot
 ```
+<!-- more -->
 此时的变量name相当于window.name，因为调用sayHello函数的对象为window，相当于window.sayHello()。和下面两种情况是一样的：
 ```javascript
 var name = "tsrot";

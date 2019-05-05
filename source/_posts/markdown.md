@@ -5,7 +5,7 @@ tags: markdown
 ---
 
 ### hexo中加入多个标签
-```js
+```code
 	tages: [标签1,标签2,…标签n]
 	tages:
 		标签1
@@ -16,7 +16,7 @@ tags: markdown
 <!-- more -->
 
 ### markdown语法
-```js
+```code
 	#标题
 	‘#’ 一级标题（在#后面加个空格，否则不会起作用）
 	‘##’ 二级标题

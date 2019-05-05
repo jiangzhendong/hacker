@@ -1,11 +1,11 @@
-# JS中的call、apply、bind方法详解
-
+title: JS中的call、apply、bind方法详解
+date: 2017-1-5 15:53:29
+---
 地址：http://blog.xieliqun.com/2016/08/10/call-apply-bind/
 
 > call()、apply()、bind()都是函数对象的一个方法，它们的作用都是改变函数的调用对象。它的使用极大的简化了代码的调用。
 
 
-----------
 
 ### 一、方法定义
 
@@ -19,7 +19,7 @@ arg1 ... argN为被调用方法的传参。
 语法：`apply([thisObj[,argArray]])`
 定义：应用某一对象的一个方法，用另一个对象替换当前对象。
 说明：apply的第一个参数thisObj和call方法的一样，第二个参数argArray为一个传参数组。thisObj如果未传，那么 Global 对象被用作 thisObj。
-
+<!-- more -->
 #### bind方法
 在ECMAScript5中扩展了叫bind的方法（IE6,7,8不支持）
 语法：`bind([thisObj[,arg1[, arg2[,   [,.argN]]]]])`

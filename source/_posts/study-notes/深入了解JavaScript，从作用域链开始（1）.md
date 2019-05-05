@@ -1,5 +1,6 @@
-# 深入了解JavaScript，从作用域链开始（1）
-
+title: 深入了解JavaScript，从作用域链开始（1）
+date: 2017-1-5 15:53:29
+---
 地址：http://blog.xieliqun.com/2016/10/05/scope-chain/
 
 > 作用域是每种计算机语言最重要的基础之一，当然它也是JavaScript最重要的概念之一。要想真正的深入了解JavaScript，了解JavaScript的作用域链非常必要。现在让我们深入了解JavaScript作用域和作用域链的工作原理。
@@ -15,7 +16,7 @@
 #### 全局作用域
 
 在代码中任何地方都能访问到的对象拥有全局作用域，一般来说以下几种情形拥有全局作用域：
-
+<!-- more -->
 ##### （1）程序最外层定义的函数或者变量
 ```javascript
 var a = "tsrot";

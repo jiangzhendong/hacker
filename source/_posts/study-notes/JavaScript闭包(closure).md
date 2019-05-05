@@ -1,11 +1,11 @@
-# JavaScript闭包（closure）
-
+title: JavaScript闭包（closure）
+date: 2017-1-5 15:53:29
+---
 地址：http://blog.xieliqun.com/2016/08/07/javascript-closure/
 
 >JavaScript变量分为全局变量和局部变量。Javascript语言的特殊之处，就在于函数内部可以直接读取全局变量，而在函数外部自然无法读取函数内的局部变量。当你需要在函数外调用函数内的局部变量时，此时就要用到一些方法。这个过程就是闭包。
 
 
-----------
 ###一、JavaScript为什么会有闭包这种东西
 JavaScript没有像其它后端语言一样可以直接定义一个变量可供其它外部函数调用的关键字或者方法。于是就产生了闭包这种东西。举个例子：
 ```javascript
@@ -16,6 +16,7 @@ function f1(){
 }
 f1();   //tsrot
 ```
+<!-- more -->
 ```javascript
 //函数外部无法访问函数内部的局部变量
 function f2(){

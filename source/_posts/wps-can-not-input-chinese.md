@@ -10,11 +10,11 @@ tags: wps
 
 ## WPS文字
  * 打开终端输入：
-```js
+```sh
 	sudo vim /usr/bin/wps
 ```
 * 添加一下文字到打开的文本中（添加到“#!/bin/bash”下面）：
-```js
+```sh
 	export XMODIFIERS="@im=fcitx"
  	export QT_IM_MODULE="fcitx"
 ```
@@ -22,22 +22,22 @@ tags: wps
 
 ## WPS表格
  * 打开终端输入：
-```js
+```sh
         sudo vim /usr/bin/et
 ```
  * 添加一下文字到打开的文本中（添加到“#!/bin/bash”下面）：
-```js
+```bash
         export XMODIFIERS="@im=fcitx"
         export QT_IM_MODULE="fcitx"
 ```
 
 ## WPS演示
  * 打开终端输入：
-```js
+```sh
         sudo vim /usr/bin/wpp
 ```
  * 添加一下文字到打开的文本中（添加到“#!/bin/bash”下面）：
-```js
+```sh
         export XMODIFIERS="@im=fcitx"
         export QT_IM_MODULE="fcitx"
 ```

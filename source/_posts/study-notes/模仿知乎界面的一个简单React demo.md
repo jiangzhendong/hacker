@@ -1,5 +1,6 @@
-# 模仿知乎界面的一个简单React demo
-
+title: 模仿知乎界面的一个简单React demo
+date: 2017-1-5 15:53:29
+---
 博客地址：http://blog.xieliqun.com/2016/11/04/react-zhihu/
 
 
@@ -20,7 +21,7 @@ $ bower install
 
 $ gulp server   //用浏览器打开 localhost:5000
 ```
-
+<!-- more -->
 
 ## 搭建开发环境
 

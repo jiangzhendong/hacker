@@ -1,5 +1,6 @@
-# Arguments对象作用深度研究
-
+title: Arguments对象作用深度研究
+date: 2017-1-5 15:53:29
+---
 地址：http://blog.xieliqun.com/2016/08/14/arguments/
 
 > 每个函数都会有一个Arguments对象实例arguments，它引用着函数的实参，可以用数组下标的方式"[]"引用arguments的元素。arguments.length为函数实参个数，arguments.callee引用函数自身。
@@ -14,7 +15,7 @@ Arguments对象是一个伪数组对象，它有length属性，可以arguments[i
 #### Arguments的length属性
 
 Arguments的length属性，表示function函数实际所传参数的个数。函数名点length可以获取函数期望的传参个数。
-
+<!-- more -->
 ```javascript
 function argTest(a,b,c){
 	var t = arguments.length; //实际传参个数

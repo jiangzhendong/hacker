@@ -1,5 +1,6 @@
-# React学习资源汇总
-
+title: React学习资源汇总
+date: 2017-1-5 15:53:29
+---
 博客地址：http://blog.xieliqun.com/2016/11/05/react-study/
 
 
@@ -17,7 +18,7 @@
 1. [React 设计思想](https://github.com/react-guide/react-basic)
 2. [React的设计哲学 - 简单之美](http://www.infoq.com/cn/articles/react-art-of-simplity/) 
 3. [颠覆式前端UI开发框架:React](http://www.infoq.com/cn/articles/subversion-front-end-ui-development-framework-react/)
-
+<!-- more -->
 ## 初学者入门
 
 ### 文章
