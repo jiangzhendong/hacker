@@ -6,7 +6,7 @@ tags: [dpkg,apt,linux]
 dpkg: warning: files list file for package `*****' missing, assuming package has no files currently installed解决办法
 <!-- more -->
 
-```js
+```code
 #!/bin/bash
 set -e
 
@@ -41,7 +41,7 @@ done
 rmdir "$DIR"
 ```
 在 Ubuntu 执行 sudo apt-get upgrade 时，出现了如下的报错：
-```js
+```code
 Setting up bluez (4.101-0ubuntu13.1) ...
 reload: Job is not running: dbus
 invoke-rc.d: initscript dbus, action "force-reload" failed.
@@ -63,7 +63,7 @@ E: Sub-process /usr/bin/dpkg returned an error code (1)
 ```
 通过执行下面的命令可以解决该问题：
 
-```js
+```code
 $ sudo mv /var/lib/dpkg/info/ /var/lib/dpkg/info_old/
 $ sudo mkdir /var/lib/dpkg/info/
 $ sudo apt-get update
