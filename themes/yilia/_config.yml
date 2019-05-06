@@ -4,7 +4,8 @@ menu:
   所有文章: /archives
   随感: /categories/随感/
   图片: /picture/index.html
-  我是: /OpenNote/index.html
+# 笔记: /OpenNote/My.html
+  简历: /jianli/index.html
 # SubNav
 subnav:
   github: "https://github.com/jiangzhendong"
